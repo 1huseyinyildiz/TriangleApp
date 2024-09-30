@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,25 +24,25 @@ namespace TriangleApp.Models
         {
             if (!IsValidTriangle())
             {
-                return TriangleType.Invalid;  // Geçersiz üçgen
+                return TriangleType.Invalid;  // Invalid triangle
             }
 
             if (SideA == SideB && SideB == SideC)
             {
-                return TriangleType.Equilateral;  // Eşkenar üçgen
+                return TriangleType.Equilateral;  // Equilateral triangle
             }
 
             else if (SideA == SideB || SideB == SideC || SideA == SideC)
             {
-                return TriangleType.Isosceles;  // İkizkenar üçgen
+                return TriangleType.Isosceles;  // Isosceles triangle
             }
 
-            return TriangleType.Scalene;  // Çeşitkenar üçgen
+            return TriangleType.Scalene;  // Variegated triangle
         }
 
         private bool IsValidTriangle()
         {
-            // Üçgen eşitsizliği kontrolü
+            //  Triangle inequality check
             return (SideA + SideB > SideC) && (SideA + SideC > SideB) && (SideB + SideC > SideA);
         }
     }
